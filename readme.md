@@ -1,26 +1,62 @@
 # Predição de saída de clientes
 
-## O problema abordado
+## Sobre o problema de negócio abordado
+### Introdução
+Prever a sáida de cleintes de uma empresa é algo fundamental para se alcançar melhores resultados. Ter o conhecimento de que determinado cliente pode estar prester a sair da empresa permite que a mesma busque reconquistá-lo, de modo a mantê-lo presente consumindo seus produtos e serviços.
 
-Prever a rotatividade da empresa é algo fundamental para se alcançar melhores resultados. Ter o conhecimento de que determinado cliente pode estar prester a sair da empresa permite que a mesma busque reconquistá-lo, de modo a mantê-lo presente consumindo seus produtos e serviços.
+A perda de um cliente para a concorrência pode ser um grande prejuízo individual, já que a empresa perde um comprador, mas também pode acarretar prejuízos coletivos como efeito manada de evasão (clientes saem porque outros saíram) por exemplo. Além do mais, um cliente sempre será uma forma forte de propaganda e isso deve ser sempre levado em consideração: resumidamente, cliente contente pode fazer propaganda positiva da empresa para outros e clientes descontentes podem fazer propaganda negativa.
 
-A perda de um cliente para a concorrência pode ser um grande prejuízo individual, já que a empresa perde um comprador, mas também pode acarretar prejuízos coletivos como efeito manada de evasão (clientes saem porque outros saíram) por exemplo. Além do mais, um cliente sempre será uma forma considerável de propaganda e isso deve ser sempre levado em consideração: resumidamente, cliente contente pode fazer propaganda positiva da empresa para outros e clientes descontentes podem fazer propaganda negativa.
-
-Quanto mais se entende esse cenário, entendende-se também a importância de prever a saída de clientes. Dessa forma, enxergar que um cliente está prestes a sair (com uma estimativa disso em termos probabilísticos também) é de grande relevância e isso pode ser feito com a Ciência de Dados. 
 
 ![main](Images/main_resized.jpg)
 
-Supondo que se tenha os dados registrados sobre clientes e a relação deles com os produtos/serviços da empresa, pode-se visualizar o quanto o cliente gera de receita para a empresa em um determinado período de tempo. 
 
-Se um cliente gera Y reais, em média, de receita mensal para a empresa, em um ano teria-se Y x 12 reais. No cenário em que em um ano a empresa perde 10% de seus clientes já existentes e o número total é de 3000 clientes, então **todo ano perde-se cerca de 300 x Y x 12 reais, que poderiam ser recebidos pela empresa**. 
+Quanto mais se entende esse cenário, mais se compreende também a importância de prever a saída de clientes. Dessa forma, enxergar que um cliente está prestes a sair (com uma estimativa disso em termos probabilísticos também) é de grande relevância e isso pode ser feito com a Ciência de Dados. 
 
-Portanto, além de investir em novos clientes, deve-se também investir em manter os que já faziam parte da empresa.
+Para o problema em questão, iremos imaginar um cenário de uma empresa de crédito.
 
-### A solução proposta ??
 
-Desenvolver um modelo preditivo capaz de estimar se determinado cliente vai ou não sair da empresa para que se tenha esse conhecimento e para que se possa tomar medidas que o mantenham na empresa.
+### Sobre valores - quantificando o problema
+O saldo médio mensal de clientes que saem está estimado (com 95% de confiança) entre 7381.18 e 7803.58 dólares. Isso nos dá uma média de 7592.38 dólares mensais. 
 
-A ideia é desenvolver um sistema que periodicamente calcule tal probabilidade e informe isso, informando também as principais características desses clientes.
+Considerando a amostra de valores disponíveis para este estudo (e considerando o maior erro de proporção possível caso essa amostra não seja de qualidade), temos que a probabilidade de um cliente sair é de 16.29% a 24.45%.
+
+Portanto, se formos imaginar um cenário em que a PIOR probabilidade acontecerá, ou seja, aproximadamente 25% de saída de clientes, tem-se que:
+- para um total de 20.000 clientes, 5.000 abandoram a empresa
+- se cada um que sai possui saldo mensal médio de 7592.38, **tem-se então 37.961.900 de dólares a menos em cada mês**.
+
+
+Portanto, além de investir em novos clientes, investir em manter os que já fazem parte da empresa é de grande relevância.
+
+### A solução proposta
+
+O objetivo inicial desse projeto de Ciência de Dados era de construir uma solução aceitável para prever a saída de clientes antes mesmo de ela acontecer e tal objetivo foi cumprido. Através do uso da Estatística, Modelagem e do Machine Learning, foi desenvolvida uma solução e também implementada. 
+
+#### Desempenho observado da solução para os dados utilizados
+
+O modelo apresentou performance agradável com relação aos dados utilizados para teste do mesmo. Basicamente:
+
+- Taxa de acerto médio do modelo: 77%:
+    - A cada 100 clientes que saíram da empresa e o modelo não sabia disso, ele acertou de 74 a 77 - Portanto, taxa de falso negativo em média 24%.
+
+    - A cada 100 clientes que não saíram da empresa e o modelo não sabia disso, ele acertou de 75 a 81 - Portanto, taxa de falso positivo em média 22%.
+    Como pôde ser observado,
+
+
+#### Desempenho esperado da solução no mundo real
+
+A partir dos dados observados na testagem do modelo, algumas informações foram **estimadas** (com grau de confiança de 98%) sobre como o modelo se comportaria quando colocado para funcionar no mundo real:
+- Taxa de acerto esperado para o modelo no mundo real: de 72% a 82%:
+- Taxa de ocorrencia de falso negativo: 18% a 28%
+- Taxa de ocorrência de falso positivo: 15% a 27%
+
+Vale ressaltar que esses valores são esperados se o modelo for utilizado em um cenário de distribuição amostral semelhante ao que foi utilizado nesse projeto. Por essa razão, deve-se treinar um novo modelo se os dados forem extraídos de outra população. 
+
+**FALTA FALAR DO LIFT**
+
+
+
+
+
 
 ## Dados usados no desenvolvimento da solução
 
