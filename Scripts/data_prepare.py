@@ -4,7 +4,7 @@ import pickle
 class Pipeline:
     def __init__(self):
         # Carregando os todos os dados
-        self.dataset = pd.read_csv('../Churn_Modelling.csv')
+        self.dataset = pd.read_csv('../Dataset/Churn_Modelling.csv')
         
         # Carregando o normalizador
         scaler_file = open('../Scalers/min_max_quantitatives.pkl', 'rb')
