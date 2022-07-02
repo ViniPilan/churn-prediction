@@ -7,7 +7,8 @@ import os
 
 app = Flask(__name__)
 
-model_file = open('../Models/class_model.pkl', 'rb')
+os.chdir('..')
+model_file = open('/Models/class_model.pkl', 'rb')
 model = pickle.load(model_file)
 model_file.close()
 
