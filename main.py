@@ -1,5 +1,5 @@
 from flask import Flask, request
-from data_prepare import Pipeline
+from Scripts.data_prepare import Pipeline
 import pandas as pd
 import pickle
 import os
