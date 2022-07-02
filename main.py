@@ -17,10 +17,13 @@ def predict():
     
     # Collect data
     if test_json:
+        pipeline = Pipeline()
+            
         if isinstance(test_json, dict): # Unique value
-            df = Pipeline().run(pd.DataFrame(test_json, index=[0]))
+            df = pipeline.run(pd.DataFrame(test_json, index=[0]))
+                
         else:
-            df = Pipeline().run( pd.DataFrame(test_json, columns=test_json[0].keys()) )
+            df = pipeline.run(pd.DataFrame(test_json, columns=test_json[0].keys()))
 
     # Prediction
     pred = model.predict(df)
