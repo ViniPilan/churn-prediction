@@ -33,12 +33,19 @@ Para o problema em questão, iremos imaginar um cenário de uma empresa de créd
 ### Sobre valores - quantificando o problema
 O saldo médio mensal de clientes que saem está estimado (com 95% de confiança) entre 7381.18 e 7803.58 dólares. Isso nos dá uma média de 7592.38 dólares mensais. 
 
-Considerando a amostra de valores disponíveis para este estudo (e considerando o maior erro de proporção possível caso essa amostra não seja de qualidade), temos que a probabilidade de um cliente sair é de 16.29% a 24.45%.
+Considerando a amostra de valores disponíveis para este estudo (e considerando o maior erro de proporção possível caso essa amostra não seja de qualidade), temos que a proporção de clientes que saíram está entre 16.29% e 24.45%. 
 
-Portanto, se formos imaginar um cenário em que a PIOR probabilidade acontecerá, ou seja, aproximadamente 25% de saída de clientes, tem-se que:
+<span style="color:#bd7a1c">
+<p><strong>Probabiidade de saída de um cliente:</strong> aproximadamente 25%</p>
+
+<p><strong>Saldo mensal estimado de um cliente que saiu:</strong> cerca de 7.600 dólares</p>
+</span>
+
+Se considerarmos que a amostra é do período de um ano, temos no pior cenário (maior taxa de saída) que:
 
 ![saida](Images/estimativa_saida.jpg)
 
+Nessas condições:
 - para um total de 20.000 clientes, 5.000 abandoram a empresa
 - se cada um que sai possui saldo mensal médio de 7592.38, **tem-se então 37.961.900 de dólares a menos em cada mês**.
 
