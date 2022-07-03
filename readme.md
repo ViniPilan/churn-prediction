@@ -37,7 +37,7 @@ Considerando a amostra de valores disponíveis para este estudo (e considerando 
 
 Portanto, se formos imaginar um cenário em que a PIOR probabilidade acontecerá, ou seja, aproximadamente 25% de saída de clientes, tem-se que:
 
-[!saida]('Images/estimativa_saida.jpg)
+[!saida](Images/estimativa_saida.jpg)
 
 - para um total de 20.000 clientes, 5.000 abandoram a empresa
 - se cada um que sai possui saldo mensal médio de 7592.38, **tem-se então 37.961.900 de dólares a menos em cada mês**.
