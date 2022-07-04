@@ -17,79 +17,61 @@
 
 ## Sobre o problema de negócio abordado
 ### Introdução
-Prever a sáida de cleintes de uma empresa é algo fundamental para se alcançar melhores resultados. Ter o **conhecimento de que determinado cliente pode estar prestes a sair da empresa permite que a mesma busque reconquistá-lo**, de modo a mantê-lo presente consumindo seus produtos e serviços.
+Prever a saída de clientes de uma empresa é algo bastante interessante para que melhores resultados sejam alcançados. Ter o **conhecimento sobre a possibilidade de evasão de determinado cliente permite que a empresa busque reconquistá-lo**, mantendo-o presente e consumindo seus produtos e serviços.
 
-**A perda de um cliente para a concorrência pode ser um grande prejuízo** individual, já que a empresa perde um comprador, mas também pode acarretar prejuízos coletivos como efeito manada de evasão (clientes saem porque outros saíram) por exemplo. Além do mais, um cliente sempre será uma forma forte de propaganda e isso deve ser sempre levado em consideração: resumidamente, cliente contente pode fazer propaganda positiva da empresa para outros e clientes descontentes podem fazer propaganda negativa.
+**Perder um cliente para a concorrência pode ser um grande prejuízo** individual, já que a empresa perde um comprador. E isso também pode acarretar prejuízos coletivos no geral, como outros clientes saindo também porque outros saíram, por exemplo. Além do mais, um cliente sempre será uma forte forma de propaganda e isso deve ser levado em consideração: resumidamente, cliente contente pode fazer propaganda positiva da empresa para outros e clientes descontentes podem fazer propaganda negativa.
 
-
-![main](Images/main_resized.jpg)
-
-
-Quanto mais se entende esse cenário, mais se compreende também a importância de prever a saída de clientes. Dessa forma, enxergar que um cliente está prestes a sair (com uma estimativa disso em termos probabilísticos também) é de grande relevância e isso pode ser feito com a Ciência de Dados. 
-
-Para o problema em questão, iremos imaginar um cenário de uma empresa de crédito.
-
+![img_main](Images/main_resized.jpg)
+ 
+Quanto mais se entende esse cenário, mais se compreende também a importância de prever a saída de clientes. Dessa forma, enxergar que um cliente está prestes a sair (com uma estimativa disso em termos probabilísticos também) é de grande relevância e isso pode ser feito com a Ciência de Dados.
+Para o problema em questão, iremos imaginar um cenário de uma empresa de crédito, como um banco, por exemplo.
 
 ### Sobre valores - quantificando o problema
-O saldo médio mensal de clientes que saem está estimado (com 95% de confiança) entre 7381.18 e 7803.58 dólares. Isso nos dá uma média de 7592.38 dólares mensais. 
+Utilizando o conjunto de dados disponíveis para este estudo, o qual iremos abordar com mais detalhes mais a frente, temos que:
+- O saldo médio mensal de clientes que saem está estimado (com 95% de confiança) entre 7381.18 e 7803.58 dólares. 
+- A proporção de clientes que saíram em relação ao total de cliente está estimada entre 16.29% e 24.45% (estimativa feita a partir de 95% de confiança e considerando o maior erro possível, para quando a amostra é pouco representativa).
+Se considerarmos que a amostra é do período de um ano e se for considerado também um cenário com a maior evasão possível estimada, tem-se que:
 
-Considerando a amostra de valores disponíveis para este estudo (e considerando o maior erro de proporção possível caso essa amostra não seja de qualidade), temos que a proporção de clientes que saíram está entre 16.29% e 24.45%. 
-
-<span style="color:#bd7a1c">
-<p><strong>Probabiidade de saída de um cliente:</strong> aproximadamente 25%</p>
-
-<p><strong>Saldo mensal estimado de um cliente que saiu:</strong> cerca de 7.600 dólares</p>
-</span>
-
-Se considerarmos que a amostra é do período de um ano, temos no pior cenário (maior taxa de saída) que:
-
-![saida](Images/estimativa_saida.jpg)
-
+![img_prop01](Images/estimativa_saida.jpg)
+ 
 Nessas condições:
-- para um total de 20.000 clientes, 5.000 abandoram a empresa
-- se cada um que sai possui saldo mensal médio de 7592.38, **tem-se então 37.961.900 de dólares a menos em cada mês**.
-
+- Supondo um total de 20.000 clientes, teríamos que 5.000 abandonariam a empresa no ano
+- Desses 5.000 que abandonariam, se cada um que sai possui salário entre 7381.18 a 7803.58 dólares, **tem-se então de 36.905.900 a 39.017.900 de dólares a menos em cada mês**.
 
 Portanto, além de investir em novos clientes, investir em manter os que já fazem parte da empresa é de grande relevância.
 
+
 ### A solução proposta
-
-O objetivo inicial desse projeto de Ciência de Dados era de construir uma solução aceitável para prever a saída de clientes antes mesmo de ela acontecer e tal objetivo foi cumprido. Através do uso da Estatística, Modelagem e do Machine Learning, foi desenvolvida uma solução e também implementada. 
-
+O objetivo inicial desse projeto de Ciência de Dados era de construir uma solução aceitável para prever a saída de clientes antes mesmo de ela acontecer e tal objetivo foi cumprido. Através do uso da Estatística, Modelagem e do Machine Learning, foi desenvolvida uma solução eficiente e também foi implementada na nuvem, com acesso via API.
 #### Desempenho observado da solução para os dados utilizados
-
 O modelo apresentou performance agradável com relação aos dados utilizados para teste do mesmo. Basicamente:
-
 - Taxa de acerto médio do modelo: 77%:
-    - A cada 100 clientes que saíram da empresa e o modelo não sabia disso, ele acertou de 74 a 77 - Portanto, taxa de falso negativo em média 24%.
-
-    - A cada 100 clientes que não saíram da empresa e o modelo não sabia disso, ele acertou de 75 a 81 - Portanto, taxa de falso positivo em média 22%.
-    Como pôde ser observado,
-
+    - A cada 100 clientes que saíram da empresa e o modelo não sabia disso, ele acertou de 74 a 77 - Portanto, taxa de falso negativo de, em média, 24%.
+    - A cada 100 clientes que não saíram da empresa e o modelo não sabia disso, ele acertou de 75 a 81 - Portanto, taxa de falso positivo, em média, de 22%. 
 
 #### Desempenho esperado da solução no mundo real
-
-A partir dos dados observados na testagem do modelo, algumas informações foram **estimadas** (com grau de confiança de 98%) sobre como o modelo se comportaria quando colocado para funcionar no mundo real:
+A partir dos dados observados na testagem do modelo, algumas informações foram **estimadas** (com grau de confiança de 98% e abordagem de erro conservativa) sobre como o modelo se comportaria quando colocado para funcionar no mundo real, a partir da população a qual a amostra pertence:
 - Taxa de acerto esperado para o modelo no mundo real: de 72% a 82%:
-- Taxa de ocorrencia de falso negativo: 18% a 28%
+- Taxa de ocorrência de falso negativo: 18% a 28%
 - Taxa de ocorrência de falso positivo: 15% a 27%
 
-Vale ressaltar que esses valores são esperados se o modelo for utilizado em um cenário de distribuição amostral semelhante ao que foi utilizado nesse projeto. Por essa razão, deve-se treinar novamente este ou um novo modelo se os dados forem extraídos de outra população. 
+Vale ressaltar que esses valores são esperados se o modelo for utilizado em um cenário de distribuição amostral semelhante ao que foi utilizado nesse projeto. Por essa razão, deve-se treinar novamente este ou um novo modelo se os dados forem extraídos de outra população.
 
 #### LIFT esperado
+Supondo que seja possível enviar benefícios para aqueles clientes que estão prestes a sair como tentativa de mantê-los na empresa e, supondo também, que **a cada 100 pessoas que recebem tais benefícios, 30 mudam de ideia e decidem não ficar**, temos então:
+- Se for considerado o **acaso** como solução do problema, teríamos 50% de acerto do modelo. Para cada 100 pessoas que sairiam, ele acertaria 50 e, dessas 50, **15 mudariam de ideia (30% dos acertos positivos)**.
+- Se for considerado o **modelo desenvolvido** como solução do problema (e considerando o pior caso para falso negativo de 28%) teríamos que a cada 100 pessoas que sairiam, ele acertaria, no mínimo, 72 delas e, aproximadamente, **21 delas mudariam de ideia (30% dos acertos positivos)**.
+Portanto, é possível ver que o modelo teria **6% a mais de eficiência que o acaso** mesmo no pior caso possível de erro estimado (para quando a taxa de falso positivo fosse a maior estimada). 
 
-Supondo que seja possível enviar benefícios para aqueles clientes que estão prestes a sair como tentativa de mantê-los na empresa e, supondo também, que **a cada 10 pessoas que recebem tais benefícios, 30% mudam de ideia e decidem não ficar**. Temos então:
+Para o abandono calculado de 25% (média de 37.961.900 dólares a menos em cada mês), uma queda de 6% **diminuiria o abandono para 19% (28.851.044 dólares)**. Isso seria uma diferença de: **37.961.900 - 28.851.044 = 9.110.856 dólares** (9,11 milhões de dólares mesmo no PIOR caso).
 
-- Se for considerado o **acaso** como solução do problema, teriamos então 50% de acerto do modelo. Para cada 100 pessoas que sairiam, ele acertaria 50 e, dessas 50, **15 mudariam de ideia (30% dos acertos positivos)**.
-- Se for considerado o **modelo desenvolvido** como solução do problema (e considerando o *pior caso para falso negativo de 28%*) teriamos que a cada 100 pessoas que sairiam, ele acertaria 72 delas e, aproximadamente, **21 delas mudariam de ideia (30% dos acertos positivos).**
+![img_graph_comparativo_lift](Images/lift.jpg)
 
-Portanto, é possível ver que o modelo teria **6% a mais de eficiência que o acaso** mesmo no *pior caso possível de erro estimado*. Para o abandono calculado de 25% (37.961.900 dólares a menos em cada mês), uma queda de 6% **diminuiria o abandono para 19% (28.851.044 dólares)**. Isso seria uma diferença de: **37.961.900 - 28.851.044 =  9.110.856 dólares** (9,11 milhões de dólares no PIOR caso).
-
-Lembrando que esses 9,11 milhões são o conjunto do saldo mensal (dinheiro que o cliente coloca no banco por mês) de todos os clientes por mês.
+Lembrando que esses valores descritos acima são referentes ao conjunto de **saldo mensal** (dinheiro que o cliente coloca no banco mensalmente – seu salário) somado de todos os clientes.
 
 
 ## Dados usados no desenvolvimento da solução
-Para mais informações sobre essa sessão, acesse o notebook da análise exploratória dos dados na pasta *Notebooks*.
+Algumas informações sobre o conjunto de dados usado estão logo abaixo. Para outras informações mais específicas, acesse o notebook da análise exploratória dos dados na pasta *Notebooks*.
 
 ### Coleta dos dados
 
@@ -167,9 +149,10 @@ Ao realizar tal request, será devolvido um data frame (no formato json) com a p
 
 Para o problema abordado foi desemvolvida uma solução utilizando Data Science e Machine Learning. Como foi apresentado nesse documento, a solução apresenta ganho significativo para a empresa e, por ser facilmente implementada, é também bastante viável.
 
-A implementação via nuvem (com API) feita possibilita que essa solução seja utilizada em larga escala. Vale ressaltar que os dados foram retirados de um data set do kaggle e por isso eles foram considerados como uma amostra pouco representativa. Dessa forma, foi estimado o pior erro possível estimado para criar as conclusões de desempenho. 
+A implementação via nuvem (com API) feita possibilita que essa solução seja utilizada em larga escala. Vale ressaltar que os dados foram retirados de um data set do kaggle e por isso eles foram considerados nesse estudo como uma amostra pouco representativa. Dessa forma, foi estimado o pior erro possível para criar as conclusões de desempenho. 
 
 Para uso eficiente da solução, ela deve ser construída com dados referentes a empresa. A solução feita aqui é apenas uma demonstração de conhecimento para portifólio.
+
 
 ## Sobre o autor
 Me chamo Vinícius de Paula Pilan e sou estudante da área de dados. Busco alcançar autoridade nessa área e me tornar um cientista de dados profissional.
