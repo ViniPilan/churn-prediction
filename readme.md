@@ -93,7 +93,7 @@ Algumas informações sobre o conjunto de dados usado estão logo abaixo. Para o
 
 ### Coleta dos dados
 
-Os dados para desenvolver a solução proposta foram extraídos [deste](https://www.kaggle.com/datasets/shubh0799/churn-modelling) dataset do Kaggle. As características presentes são:
+Os dados para desenvolver a solução proposta foram extraídos [deste](https://www.kaggle.com/datasets/shubh0799/churn-modelling) dataset do Kaggle via Kaggle API ([neste](https://github.com/ViniPilan/churn-prediction/blob/main/Notebooks/exploratory-data-analysis.ipynb) notebook). As características presentes são:
 
 1. **RowNumber:** The number of the row
 2. **CustomerId:** The unique customer id
