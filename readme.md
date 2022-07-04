@@ -8,7 +8,7 @@
 
 2. Desenvolvimento da solução
     - Coleta e acesso aos dados
-    - Pre processamento e processamento das informações
+    - Pré processamento e processamento das informações
     - Colocando o modelo para funcionar - deploy em nuvem
 
 3. Conclusão e considerações
