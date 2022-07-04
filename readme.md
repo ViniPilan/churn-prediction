@@ -66,21 +66,20 @@ Supondo que seja possível enviar benefícios para aqueles clientes que estão p
 - Portanto, é possível ver que o modelo teria de **7 a 10% a mais de eficiência que o acaso**. Mesmo no cenário de maior taxa de falso positivo estimada para o modelo, temos ainda vantagem de 7% do que com a solução "ao acaso".
 
 #### LIFT esperado
-Se 25% das pessoas saem por ano e, calculado acima, a implementação do modelo faz com que 22% a 25% das pessoas mudem de ideia, tem-se que:
-- No mínimo, 5.5% das pessoas mudariam de ideia (22% x 25% = 5.5%), o que faz o abanono cair de 25% para 19.5%.
-- No máximo, 6.25% das pessoas mudariam de ideia (25% x 25% = 6.25%), o que faz o abandono cair de 25% para 18.75%.
+Se 25% das pessoas saem por ano e, como calculado acima, a implementação do modelo faz com que 22% a 25% das pessoas mudem de ideia, tem-se que:
+- **No mínimo**, 5.5% das pessoas mudariam de ideia (22% x 25% = 5.5%), o que **faz o abandono cair de 25% para 19.5%**.
+- **No máximo**, 6.25% das pessoas mudariam de ideia (25% x 25% = 6.25%), o que **faz o abandono cair de 25% para 18.75%**.
 
-Considerando novamente o número total de clientes em determinado ano como 20.000, teriamos:
-- Redução mínima de 5.000 para 3.900 clientes
-- Redução máxima de 5.000 para 3.750 clientes
+Considerando novamente o número total de clientes em determinado ano como 20.000, teríamos:
+- **Redução mínima da evasão de 5.000 para 3.900 clientes.**
+- **Redução máxima da evasão de 5.000 para 3.750 clientes.**
 
-Como o salário anual estimado de cada cliente que sai está estimado em média como 91.108,56 dólares (7592.38 dólares ao mês), em um ano:
-- Redução, no mínimo, de 455.542.800 (5.000 clientes que saíram) para 355.323.384 dólares (3.900 clientes que saíram)
-- Redução, no máximo, de 455.542.800 (5.000 clientes que saíram) para 341.657.100 dólares (3.750 clientes que saíram)
+Como o salário anual de cada cliente que sai está estimado, em média, como 91.108,56 dólares (7592.38 dólares ao mês):
+- Redução mínima de 455.542.800 (salário anual para 5.000 clientes que saíram) para **355.323.384** dólares (para **3.900** clientes que saíram)
+- Redução máxima de 455.542.800 (salário anual para 5.000 clientes que saíram) para **341.657.100** dólares (para **3.750** clientes que saíram)
 
-** Portanto, ao utilizar essa solução criada, o banco poderia ter de 100.219.416 a 113.885.700 de dólaras a mais em seus cofres.**
-
-Lembrando que esses valores descritos acima são referentes ao conjunto de **saldo mensal** (dinheiro que o cliente coloca no banco mensalmente – seu salário) somado de todos os clientes e refletidos isso ao ano (saldo mensal de todos os clientes x 12).
+**Portanto, ao utilizar essa solução criada, o banco poderia ter de 100.219.416 a 113.885.700 de dólaras a mais em seus cofres.**
+Lembrando que esses valores descritos acima são referentes ao conjunto de **saldo mensal do cliente** (dinheiro que ele coloca no banco mensalmente – seu salário) somado de todos os clientes e refletidos isso ao ano (saldo mensal de todos os clientes x 12).
 
 
 ## Dados usados no desenvolvimento da solução
