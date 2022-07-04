@@ -46,8 +46,8 @@ O objetivo inicial desse projeto de Ciência de Dados era de construir uma solu�
 #### Desempenho observado da solução para os dados utilizados
 O modelo apresentou performance agradável com relação aos dados utilizados para teste do mesmo. Basicamente:
 - Taxa de acerto médio do modelo: 77%:
-    - A cada 100 clientes que saíram da empresa e o modelo não sabia disso, ele acertou de 74 a 77 - Portanto, taxa de falso negativo de, em média, 24%.
-    - A cada 100 clientes que não saíram da empresa e o modelo não sabia disso, ele acertou de 75 a 81 - Portanto, taxa de falso positivo, em média, de 22%. 
+    - A cada 100 clientes que saíram da empresa e o modelo não sabia disso, ele acertou de 74 a 77 - Portanto, **taxa de falso negativo de, em média, 24%**.
+    - A cada 100 clientes que não saíram da empresa e o modelo não sabia disso, ele acertou de 75 a 81 - Portanto, **taxa de falso positivo, em média, de 22%**. 
 
 #### Desempenho esperado da solução no mundo real
 A partir dos dados observados na testagem do modelo, algumas informações foram **estimadas** (com grau de confiança de 98% e abordagem de erro conservativa) sobre como o modelo se comportaria quando colocado para funcionar no mundo real, a partir da população a qual a amostra pertence:
