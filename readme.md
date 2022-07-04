@@ -111,7 +111,7 @@ Foi feito todo o pré processamento necessário para melhorar o desempenho da so
 1. Correção de formato: modelo não aceita variáveis no formato textual
 2. Correção de valores nulos: modelo não aceita dados nulos
 3. Identificação e remoção de outliers: anomalias atrapalham no desempenho do modelo e devem ser tratadas
-4. Feature Engineering: criação de novas varíaveis de acordo com o necessário
+4. Feature Engineering: criação de novas variáveis de acordo com o necessário
 5. Identificação de normalidade: processo de verificação de curvas normais
 6. Normalização e padronização: de acordo com o conhecimento de cada feature, será realizado o ajuste correto
 
@@ -121,25 +121,25 @@ Foi feito todo o pré processamento necessário para melhorar o desempenho da so
 Foi realizado todo o processamento dos dados, verificação de correlações, entendimento dos perfis de análise (clientes que ficam e clientes que saem) e criação do modelo.
 
 ### Colocando a solução para funcionar - o deploy na nuvem
-Para que fosse possível facilitar o acesso ao modelo, foi desenvolvida uma API em flask e o deploy do modelo na plataforma *heroku*. Para utilizar o modelo, basta que seja feita uma **solicitação POST** para o seguinte endereço:
+Para que fosse possível facilitar o acesso ao modelo, foi desenvolvida uma API em flask e foi feito o deploy do modelo na plataforma *Heroku*. Para utilizar o modelo, basta que seja feita uma **solicitação POST** para o seguinte endereço:
 
 https://vinipilan-churn-model.herokuapp.com/predict
 
-O modelo deve receber via essa solicitação um data frame contendo um cliente ou mais no formato json. As colunas desse data frame são as seguintes (obrigatóriamente nessa ordem):
+O modelo deve receber via essa solicitação um data frame contendo um ou mais clientes no formato json. As colunas desse data frame são as seguintes (obrigatóriamente nessa ordem):
 - CreditScore
--  Gender_Male
--  Age
--  Balance
--  NumOfProducts
--  HasCrCard
--  IsActiveMember
--  EstimatedSalary
--  Geography_France
--  Geography_Germany
--  Geography_Spain
--  Surname_freq
+- Gender_Male
+- Age
+- Balance
+- NumOfProducts
+- HasCrCard
+- IsActiveMember
+- EstimatedSalary
+- Geography_France
+- Geography_Germany
+- Geography_Spain
+- Surname_freq
 
-Ao realizar tal request, será devolvido um data frame (no formato json) com a predição e a probabilidade estimada de saída do cliente enviado. Exemplo:
+Ao realizar tal request, será devolvido um data frame (no formato json) com a predição e com a probabilidade estimada de saída para o(s) respectivo(s) cliente(s) enviado(s). Exemplo:
 ```
 [{'CreditScore': 0.5706695005,
   'Gender_Male': 1,
@@ -159,9 +159,9 @@ Ao realizar tal request, será devolvido um data frame (no formato json) com a p
 
 ## Conclusão e considerações
 
-Para o problema abordado foi desemvolvida uma solução utilizando Data Science e Machine Learning. Como foi apresentado nesse documento, a solução apresenta ganho significativo para a empresa e, por ser facilmente implementada, é também bastante viável.
+Para o problema abordado foi desenvolvida uma solução utilizando Data Science e Machine Learning. Como foi apresentado nesse documento, a solução apresenta ganho significativo para a empresa e, por ser facilmente implementada, é também bastante viável.
 
-A implementação via nuvem (com API) feita possibilita que essa solução seja utilizada em larga escala. Vale ressaltar que os dados foram retirados de um data set do kaggle e por isso eles foram considerados nesse estudo como uma amostra pouco representativa. Dessa forma, foi estimado o pior erro possível para criar as conclusões de desempenho. 
+A implementação via nuvem (com API) feita possibilita que essa solução seja utilizada em larga escala. Vale ressaltar que os dados foram retirados de um data set do Kaggle e por isso eles foram considerados nesse estudo como uma amostra pouco representativa. Dessa forma, foi estimado o pior erro possível para criar as conclusões de desempenho. 
 
 Para uso eficiente da solução, ela deve ser construída com dados referentes a empresa. A solução feita aqui é apenas uma demonstração de conhecimento para portifólio.
 
