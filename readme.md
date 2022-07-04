@@ -55,6 +55,12 @@ A partir dos dados observados na testagem do modelo, algumas informações foram
 - Taxa de ocorrência de falso negativo: 18% a 28%
 - Taxa de ocorrência de falso positivo: 15% a 27%
 
+Se imaginarmos uma situação em que os clientes sejam julgados de forma aleatória, ou seja, com a probabilidade *de sair* sendo a mesma de *não sair* (50% pra cada), a precisão seria cerca de 50%, pois o modelo aleatório atribuiria aproximadamente metade delas como "vão sair" e metade como "não vão sair". 
+
+Pensando nisso, pode-se comparar o desempenho do modelo criado com o modelo de aleatoriedade (50% para cada classe):
+
+![img_comp_acaso](Images/modelo_e_acaso_comp.jpg)
+
 Vale ressaltar que esses valores são esperados se o modelo for utilizado em um cenário de distribuição amostral semelhante ao que foi utilizado nesse projeto. Por essa razão, deve-se treinar novamente este ou um novo modelo se os dados forem extraídos de outra população.
 
 Supondo que seja possível enviar benefícios para aqueles clientes que estão prestes a sair como tentativa de mantê-los na empresa e, supondo também, que **a cada 100 pessoas que recebem tais benefícios, 30 mudam de ideia e decidem não sair**, temos então que:
