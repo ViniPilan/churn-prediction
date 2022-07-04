@@ -57,17 +57,30 @@ A partir dos dados observados na testagem do modelo, algumas informações foram
 
 Vale ressaltar que esses valores são esperados se o modelo for utilizado em um cenário de distribuição amostral semelhante ao que foi utilizado nesse projeto. Por essa razão, deve-se treinar novamente este ou um novo modelo se os dados forem extraídos de outra população.
 
+Supondo que seja possível enviar benefícios para aqueles clientes que estão prestes a sair como tentativa de mantê-los na empresa e, supondo também, que **a cada 100 pessoas que recebem tais benefícios, 30 mudam de ideia e decidem não sair**, temos então que:
+- Se for considerado o **acaso** como solução do problema, teríamos 50% de acerto do modelo. Para cada 100 pessoas que sairiam, ele acertaria 50 e, dessas 50, **15 mudariam de ideia (50% x 30% = 15% do total de pessoas analisadas)**.
+- Se for considerado o **modelo desenvolvido** como solução do problema, com erro de falso negativo estimado entre 18 a 28%, a cada 100 pessoas que sairiam:
+	- Ele acertaria no mínimo 72 e no máximo 82 delas. 
+	- Considerando conversão de 30%, tem-se que no mínimo 22 (22% do total) e no máximo 25 (25% do total) pessoas mudariam de ideia 
+	
+- Portanto, é possível ver que o modelo teria de **7 a 10% a mais de eficiência que o acaso**. Mesmo no cenário de maior taxa de falso positivo estimada para o modelo, temos ainda vantagem de 7% do que com a solução "ao acaso".
+
 #### LIFT esperado
-Supondo que seja possível enviar benefícios para aqueles clientes que estão prestes a sair como tentativa de mantê-los na empresa e, supondo também, que **a cada 100 pessoas que recebem tais benefícios, 30 mudam de ideia e decidem não ficar**, temos então:
-- Se for considerado o **acaso** como solução do problema, teríamos 50% de acerto do modelo. Para cada 100 pessoas que sairiam, ele acertaria 50 e, dessas 50, **15 mudariam de ideia (30% dos acertos positivos)**.
-- Se for considerado o **modelo desenvolvido** como solução do problema (e considerando o pior caso para falso negativo de 28%) teríamos que a cada 100 pessoas que sairiam, ele acertaria, no mínimo, 72 delas e, aproximadamente, **21 delas mudariam de ideia (30% dos acertos positivos)**.
-Portanto, é possível ver que o modelo teria **6% a mais de eficiência que o acaso** mesmo no pior caso possível de erro estimado (para quando a taxa de falso positivo fosse a maior estimada). 
+Se 25% das pessoas saem por ano e, calculado acima, a implementação do modelo faz com que 22% a 25% das pessoas mudem de ideia, tem-se que:
+- No mínimo, 5.5% das pessoas mudariam de ideia (22% x 25% = 5.5%), o que faz o abanono cair de 25% para 19.5%.
+- No máximo, 6.25% das pessoas mudariam de ideia (25% x 25% = 6.25%), o que faz o abandono cair de 25% para 18.75%.
 
-Para o abandono calculado de 25% (média de 37.961.900 dólares a menos em cada mês), uma queda de 6% **diminuiria o abandono para 19% (28.851.044 dólares)**. Isso seria uma diferença de: **37.961.900 - 28.851.044 = 9.110.856 dólares** (9,11 milhões de dólares mesmo no PIOR caso).
+Considerando novamente o número total de clientes em determinado ano como 20.000, teriamos:
+- Redução mínima de 5.000 para 3.900 clientes
+- Redução máxima de 5.000 para 3.750 clientes
 
-![img_graph_comparativo_lift](Images/lift.jpg)
+Como o salário anual estimado de cada cliente que sai está estimado em média como 91.108,56 dólares (7592.38 dólares ao mês), em um ano:
+- Redução, no mínimo, de 455.542.800 (5.000 clientes que saíram) para 355.323.384 dólares (3.900 clientes que saíram)
+- Redução, no máximo, de 455.542.800 (5.000 clientes que saíram) para 341.657.100 dólares (3.750 clientes que saíram)
 
-Lembrando que esses valores descritos acima são referentes ao conjunto de **saldo mensal** (dinheiro que o cliente coloca no banco mensalmente – seu salário) somado de todos os clientes.
+** Portanto, ao utilizar essa solução criada, o banco poderia ter de 100.219.416 a 113.885.700 de dólaras a mais em seus cofres.**
+
+Lembrando que esses valores descritos acima são referentes ao conjunto de **saldo mensal** (dinheiro que o cliente coloca no banco mensalmente – seu salário) somado de todos os clientes e refletidos isso ao ano (saldo mensal de todos os clientes x 12).
 
 
 ## Dados usados no desenvolvimento da solução
