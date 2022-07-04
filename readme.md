@@ -28,8 +28,8 @@ Para o problema em questão, iremos imaginar um cenário de uma empresa de créd
 
 ### Sobre valores - quantificando o problema
 Utilizando o conjunto de dados disponíveis para este estudo, o qual iremos abordar com mais detalhes mais a frente, temos que:
-- O saldo médio mensal de clientes que saem está estimado (com 95% de confiança) entre 7381.18 e 7803.58 dólares. 
-- A proporção de clientes que saíram em relação ao total de cliente está estimada entre 16.29% e 24.45% (estimativa feita a partir de 95% de confiança e considerando o maior erro possível, para quando a amostra é pouco representativa).
+- O **saldo médio mensal de clientes que saem está estimado** (com 95% de confiança) entre 7381.18 e 7803.58 dólares. 
+- A **proporção de clientes que saíram em relação ao total de cliente está estimada** entre 16.29% e 24.45% (estimativa feita a partir de 95% de confiança e considerando o maior erro possível, para quando a amostra é pouco representativa).
 Se considerarmos que a amostra é do período de um ano e se for considerado também um cenário com a maior evasão possível estimada, tem-se que:
 
 ![img_prop01](Images/estimativa_saida.jpg)
