@@ -21,22 +21,32 @@
 ```
 ├── Dataset
 │   └── churn-modelling.zip: dados utilizados, podem ser baixado via API no notebook exploratory-data-analysis.ipynb.
+│
 ├── Docker
 │   ├── Dockerfile: usado na criação de uma imagem para reproduzir este projeto; 
 │   ├── docker_tutorial.pdf: tutorial para uso da imagem criada.
 │   └── requirements.txt: libs usadas no projeto
+│
 ├── Images
+│
 ├── main.py: Sript principal para deploy da solução
+│
 ├── Models
 │   └── class_model.pkl: modelo criado (DecisionTreeClassifier)
+│
 ├── Notebooks
 │   ├── deploy-test.ipynb: testando via API o modelo implementado na cloud
+│   │
 │   ├── exploratory-data-analysis.ipynb: desenvolvimento completo da solução
+│   │
 │   └── graphs.ipynb: criação dos gráficos usado no storytelling do readme
+│
 ├── Procfile: Arquivo para funcionamento do modelo na nuvem
 ├── readme.md
+│
 ├── Scalers
 │   └── min_max_quantitatives.pkl: Normalizador utilizado para padronizar certos valores
+│
 └── Scripts
     └── data_prepare.py: script que prepara dados para testagem do modelo.
 ```
