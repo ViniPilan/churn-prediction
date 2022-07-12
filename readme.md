@@ -47,9 +47,9 @@
 │
 ├── Scripts
 │   ├── data_prepare.py: script que prepara dados para testagem do modelo.
-│   └── create_and_fill.py: script que cria o banco de dados no heroku e o polula com o dataset baixado via API neste mesmo script. 
+│   └── create_and_fill.py: script que cria o banco de dados via cloud e o polula com o dataset baixado via API neste mesmo script. 
 │   
-└── main.py: Sript principal para deploy da solução
+└── main.py: Script principal para deploy da solução
 ```
 
 ## Sobre o problema de negócio abordado
@@ -130,7 +130,7 @@ Algumas informações sobre o conjunto de dados usado estão logo abaixo. Para o
 
 ### Coleta dos dados
 
-Os dados para desenvolver a solução proposta foram extraídos [deste](https://www.kaggle.com/datasets/shubh0799/churn-modelling) dataset do Kaggle via Kaggle API ([neste](https://github.com/ViniPilan/churn-prediction/blob/main/Notebooks/exploratory-data-analysis.ipynb) notebook). As características presentes são:
+Os dados para desenvolver a solução proposta foram extraídos [deste](https://www.kaggle.com/datasets/shubh0799/churn-modelling) dataset do Kaggle via Kaggle API ([neste](https://github.com/ViniPilan/churn-prediction/blob/main/Scripts/create_and_fill.py) script). As características presentes são:
 
 1. **RowNumber:** The number of the row
 2. **CustomerId:** The unique customer id
@@ -147,6 +147,7 @@ Os dados para desenvolver a solução proposta foram extraídos [deste](https://
 13. **EstimatedSalary:** Their estimated salary
 14. **Exited:** Whether they stay in the or leave
 
+O dataset baixado pela API do Kaggle foi armazenado em um banco de dados PostgreSQL via cloud (usando Heroku). Para estes dados serem acessados nos notebooks do projeto, foram criadas conexões com este banco mesmo banco nos próprios notebooks. Mais informações podem ser encontradas clicando [aqui](https://github.com/ViniPilan/churn-prediction/blob/main/Notebooks/exploratory-data-analysis.ipynb).
 
 ### Preparação do conjunto de dados - o pré processamento
 
