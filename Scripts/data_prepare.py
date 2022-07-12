@@ -1,10 +1,34 @@
 import pandas as pd
+import psycopg2
 import pickle
 
 class Pipeline:
     def __init__(self):
         # Carregando os todos os dados
-        self.dataset = pd.read_csv('Dataset/churn-modelling.zip')
+    	conn = psycopg2.connect(host="ec2-52-20-166-21.compute-1.amazonaws.com",
+                        database="defrnttd424q3s",
+                        user="adzsrxhiunrkva",
+                        password="9b53ade5ea4c20da1afab3a1ae94e98df059325187dec24a3acb72163555f7de", 
+                        port='5432')
+                        
+        self.dataset = pd.read_sql('SELECT * FROM customers', conn)
+        
+        conn.close()
+        
+        data.rename({'customerid':'CustomerId', 
+		     'surname':'Surname',
+		     'creditscore':'CreditScore',
+		     'geography':'Geography',
+		     'gender':'Gender',
+		     'age':'Age',
+		     'tenure':'Tenure',
+		     'balance':'Balance',
+		     'numofproducts':'NumOfProducts',
+		     'hascrcard':'HasCrCard',
+		     'isactivemember':'IsActiveMember',
+		     'estimatedsalary':'EstimatedSalary',
+		     'exited':'Exited'}, axis=1, inplace=True)
+		     
         
         # Carregando o normalizador
         scaler_file = open('Scalers/min_max_quantitatives.pkl', 'rb')
