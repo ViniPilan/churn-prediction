@@ -20,7 +20,7 @@
 ## Estrutura do projeto
 ```
 ├── Dataset
-│   └── churn-modelling.zip: dados utilizados, podem ser baixado via API no notebook exploratory-data-analysis.ipynb.
+│   └── churn-modelling.zip: dados utilizados, foram baixados via API no script create_and_fill.py.
 │
 ├── Docker
 │   ├── Dockerfile: usado na criação de uma imagem para reproduzir este projeto; 
@@ -28,8 +28,6 @@
 │   └── requirements.txt: libs usadas no projeto
 │
 ├── Images
-│
-├── main.py: Sript principal para deploy da solução
 │
 ├── Models
 │   └── class_model.pkl: modelo criado (DecisionTreeClassifier)
@@ -47,9 +45,13 @@
 ├── Scalers
 │   └── min_max_quantitatives.pkl: Normalizador utilizado para padronizar certos valores
 │
-└── Scripts
-    └── data_prepare.py: script que prepara dados para testagem do modelo.
+├── Scripts
+│   ├── data_prepare.py: script que prepara dados para testagem do modelo.
+│   └── create_and_fill.py: script que cria o banco de dados no heroku e o polula com o dataset baixado via API neste mesmo script. 
+│   
+└── main.py: Sript principal para deploy da solução
 ```
+
 ## Sobre o problema de negócio abordado
 ### Introdução
 Prever a saída de clientes de uma empresa é algo bastante interessante para que melhores resultados sejam alcançados. Ter o **conhecimento sobre a possibilidade de evasão de determinado cliente permite que a empresa busque reconquistá-lo**, mantendo-o presente e consumindo seus produtos e serviços.
