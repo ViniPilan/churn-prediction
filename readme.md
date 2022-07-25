@@ -211,9 +211,7 @@ Para uso eficiente da solução, ela deve ser construída com dados referentes a
 
 
 ## Sobre o autor
-Me chamo Vinícius de Paula Pilan e sou estudante da área de dados. Busco alcançar autoridade nessa área e me tornar um cientista de dados profissional.
-
-Tenho conhecimento teórico e prático sobre os principais conceitos de estatística, modelagem e ciência de dados. Meu currículo completo, minhas certificações, experiências, meus projetos e formas de contato podem ser acessadas através do meu site:
+Me chamo Vinícius de Paula Pilan e sou estudante da área de computação e tecnologia. Tenho conhecimento teórico e prático sobre os principais conceitos de estatística, modelagem e ciência de dados. Meu currículo completo, minhas certificações, experiências, meus projetos e formas de contato podem ser acessadas através do meu site:
 
 https://sites.google.com/view/vinicius-pilan/
 
